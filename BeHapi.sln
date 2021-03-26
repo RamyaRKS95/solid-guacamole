@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeHapi", "BeHapi\BeHapi.csproj", "{F4CDC9A0-5952-4FDE-8261-DE52005357A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82A2FDD7-A5A5-4E3C-B76F-88484B847846}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeHapi.BusinessLogic", "BeHapi.BusinessLogic\BeHapi.BusinessLogic.csproj", "{8ABFC705-2E94-4586-BCEE-4A0097217434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeHapi.Models", "BeHapi.Interfaces\BeHapi.Models.csproj", "{5F4DE39D-C72D-44D7-A4DC-E29C33DA5090}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A12C8D7A-CB1C-4AFC-8955-8C77CF7A3678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeHapi.UnitTests", "BeHapi.UnitTests\BeHapi.UnitTests.csproj", "{36F1CDCA-009D-4259-9B76-F55C20DC6018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeHapi.IntegrationTests", "BeHapi.IntegrationTests\BeHapi.IntegrationTests.csproj", "{B45FE3ED-F06D-405C-98B1-505DB5A1FC59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4CDC9A0-5952-4FDE-8261-DE52005357A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4CDC9A0-5952-4FDE-8261-DE52005357A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4CDC9A0-5952-4FDE-8261-DE52005357A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4CDC9A0-5952-4FDE-8261-DE52005357A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABFC705-2E94-4586-BCEE-4A0097217434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABFC705-2E94-4586-BCEE-4A0097217434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABFC705-2E94-4586-BCEE-4A0097217434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABFC705-2E94-4586-BCEE-4A0097217434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F4DE39D-C72D-44D7-A4DC-E29C33DA5090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F4DE39D-C72D-44D7-A4DC-E29C33DA5090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F4DE39D-C72D-44D7-A4DC-E29C33DA5090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F4DE39D-C72D-44D7-A4DC-E29C33DA5090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F1CDCA-009D-4259-9B76-F55C20DC6018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F1CDCA-009D-4259-9B76-F55C20DC6018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F1CDCA-009D-4259-9B76-F55C20DC6018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F1CDCA-009D-4259-9B76-F55C20DC6018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45FE3ED-F06D-405C-98B1-505DB5A1FC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45FE3ED-F06D-405C-98B1-505DB5A1FC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45FE3ED-F06D-405C-98B1-505DB5A1FC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45FE3ED-F06D-405C-98B1-505DB5A1FC59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36F1CDCA-009D-4259-9B76-F55C20DC6018} = {A12C8D7A-CB1C-4AFC-8955-8C77CF7A3678}
+		{B45FE3ED-F06D-405C-98B1-505DB5A1FC59} = {A12C8D7A-CB1C-4AFC-8955-8C77CF7A3678}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF560468-5E4C-4B72-9BC4-D6E463CB5BD9}
+	EndGlobalSection
+EndGlobal
