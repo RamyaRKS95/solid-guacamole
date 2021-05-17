@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BeHapi.Interfaces;
+using BeHapi.Models.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +14,102 @@ namespace BeHapi.Controllers
     [ApiController]
     public class HotelSearchController : ControllerBase
     {
-        // GET: api/<HotelSearchController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+
+        //Dependency Injection
+        private readonly IHotelSearchService _hotelSearchService;
+        public HotelSearchController(IHotelSearchService hotelSearchService)
         {
-            return new string[] { "value1", "value2","Test" };
+            _hotelSearchService = hotelSearchService;
         }
 
-        // GET api/<HotelSearchController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<HotelSearchController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("HotelSearchByName")]
+        public ActionResult SearchByName(string hotelName)
         {
+            HotelSearchResponse searchResponse = new HotelSearchResponse();
+            try
+            {
+                searchResponse = _hotelSearchService.FindByName(hotelName);
+
+                if (searchResponse.Status)
+                {
+                    return Ok(searchResponse);
+                }
+                else
+                {
+                    return StatusCode(403, searchResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseOutput
+                {
+                    Status = false,
+                    Message = ex.Message
+                });
+            }
+
         }
 
-        // PUT api/<HotelSearchController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost]
+        [Route("HotelSearchByLocation")]
+        public ActionResult SearchByLocation(string  location)
         {
+            HotelSearchResponse searchResponse = new HotelSearchResponse(); ;
+            try
+            {
+                searchResponse = _hotelSearchService.FindByLocation(location);
+
+                if (searchResponse.Status)
+                {
+                    return Ok(searchResponse);
+                }
+                else
+                {
+                    return StatusCode(403, searchResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseOutput
+                {
+                    Status = false,
+                    Message = ex.Message
+                });
+            }
+
         }
 
-        // DELETE api/<HotelSearchController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// GET: api/<HotelSearchController>
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
+
+        //// GET api/<HotelSearchController>/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
+
+        //// POST api/<HotelSearchController>
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
+
+        //// PUT api/<HotelSearchController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
+
+        //// DELETE api/<HotelSearchController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

@@ -1,0 +1,44 @@
+﻿@model List<Products>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "HotelSearch", FormMethod.Post))
+    {
+        <span>Hotel Name:</span> @Html.TextBox("HotelName")
+        <input type="submit" value="Search" />
+        <br />
+        <br />
+        <table class ="table table-bordered table-condensed table-striped table-hover sortable">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                @*<th>Category</th>*@
+                <th>PhysicalAddress</th>
+                <th>Description</th>
+                @*<th>LocationPath</th>*@
+            </tr>
+            @foreach (Products product in Model)
+            {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            @*<td>@product.Category</td>*@
+            <td>@product.PhysicalAddress</td>
+            <td>@product.Description</td>
+            @*<td>@product.LocationPath</td>*@
+        </tr>
+            }
+            </table>
+        }
+</body>
+</html>
